@@ -1,0 +1,104 @@
+this is  logger file Mon Jan 19 2026 23:05:13 GMT+0530 (India Standard Time) and Error and this is erro Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date);
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
+Date: $(date)
+Type: $(type)
+Message: $(data)
+
