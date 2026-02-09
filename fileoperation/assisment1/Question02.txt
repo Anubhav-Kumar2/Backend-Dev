@@ -1,0 +1,9 @@
+Q. When should you use file streams instead of reading the entire file?
+answer:
+You should use file streams instead of reading the entire file at once when efficiency, scalability, and memory management are important. File streams allow data to be read or written incrementally (in chunks) rather than loading the complete file into memory.
+
+it can be used for the following situation:
+1. Handling big file
+2. Better Memory Utilization
+3. Processing Data While It Is Being Read
+4. High-Performance and Server Applications
