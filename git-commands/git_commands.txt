@@ -1,0 +1,15 @@
+git clone "repository link" :- clone the repository from git 
+git add filename :- add the file to stage codition 
+git commit -m "message" :- add a commit message that provide infomation about the push code or file.
+git add . :- add all the staged file to repository.
+git add * :- add all the file except hidden file.
+git add *js :- add only those file whose extension is js.
+git checkout -b branchname :- allow to change the branch.
+git checkout :- it print status of branch.
+git branch :- it shows all the branch of repository.
+git switch :- it is modern method to change branch.
+git log :- shows all the commits done.
+git rm filename :- remove the file with name given.
+git push -u origin :- it upload the branch to the server.
+git status :- shows the status of current repository.
+git branch -d branchname :- safe delete the branch that is merged.
