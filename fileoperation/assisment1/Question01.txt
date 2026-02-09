@@ -1,0 +1,24 @@
+ 1. What is the difference between synchronous and asynchronous file operations?
+answer:=> 
+synchronous file operations: In a synchronous file operation system, file-related tasks (read, write, open, close) are executed one at a time, and the program waits until the operation finishes before moving to the next line of code.
+
+how it work:
+1. Program requests a file operation (e.g., read a file)
+2. OS performs the operation
+3. Program waits (blocked)
+4. OS returns the result
+5. Program resumes execution
+ 
+asynchronous file operations: Asynchronous file operations allow a program to start a file task and continue executing other code without waiting for that task to finish.
+
+how it work:
+
+1. Program requests a file operation
+2. OS starts the operation in background
+3. Program continues executing other code
+4. When operation finises:
+          Callback is called or
+          Promise is resolved/rejected
+
+
+
