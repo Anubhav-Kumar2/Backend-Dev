@@ -1,0 +1,3 @@
+Q. Explain the purpose of the ‘utf8’ encoding parameter in file operations.
+answer: 
+In Node.js, the utf8 encoding parameter in file operations specifies how the fs module converts data between binary form and text form. Since files are stored as raw bytes on disk and Node.js reads them as Buffer objects by default, providing utf8 instructs Node.js to decode those bytes into a readable string using the UTF-8 character encoding.
