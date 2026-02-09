@@ -1,0 +1,30 @@
+Q. What are the common error codes in file system and what do they mean?
+answer:
+   In Node.js, file system operations may fail and throw erroe identified by standard error codes.
+#type of error code:
+1.) ENONENT(Error NO ENTry)
+=> this error occurs when a file or directory does not exist at the specified path.it is commonly seen while reading, deleting or opening a file that is missing.
+
+2. EACCES (Error ACCESS)
+=> this error indicates that the program does not have sufficient permission to access the file or directory.
+
+3. EEXIST (Error EXISTS)
+=> this error occurs when attempting to create a file or directory that already exists, usually with "fs.mkdir" or "fs.open" using exclusive flags.
+
+4. EPERM (Error PERmission)
+=> this error is raised when an operation is not permitted, even if the file exists. it is common on windows when modifying system files or restricted resources.
+
+5. EISDIR (Error IS DIRectory)
+=> this error occurs when a file operation is attempted on a directory instead of a file.
+
+6. ENOTDIR  (Error NOT DIRectory)
+=> this error occurs when a directory is expected in the path, but a file is found instead.
+
+7.EBUSY (Error BUSY)
+=> this error indicates that the file or directory is currently in use by another process and cannot be accessed or modified.
+
+8. EMFILE (Error too Many open Files)
+=> this error occurs when the process exceeds the maximum number of file descriptors allowed by the operating system.
+
+9.EINVAL (Error INVALID argument)
+=> this error occurs when an invalid argument is passed to a file system function, such as an incorrect flag or offset.
