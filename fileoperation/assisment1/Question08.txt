@@ -1,0 +1,19 @@
+Q. What is the difference between writeFile and appendFile methods?
+answer:
++-----------------------------------+----------------------------------+
+|        "fs.writeFile()"           |      "fs.appendFile()"           |
++-----------------------------------+----------------------------------+
+| Writes data to a file             | Adds data to the end of a file.  |
++-----------------------------------+----------------------------------+
+| Overwrite the entire file         | Preserves existing content       |
++-----------------------------------+----------------------------------+
+| Creates file if it does not exist | Writes at the end                |
++-----------------------------------+----------------------------------+
+| Data loss if file already exist   | File can grow indefinitely       |
++-----------------------------------+----------------------------------+
+
+fs.writeFile() => 
+writes data to a file by replacing its existing content. if the file already exists, its previous data is completely overwritten.if the file does not exist, a new file is created. this method is typically used when you want to create a file or updating it entirely.
+
+fs.appendFile() =>
+Adds data to the end of a file without removing the existing content. if the file does not exist, it is also created automatically. this method is useful for logging, audit trails, or any situation where data needs to be preserved and new infomation should be added sequentially.
