@@ -1,0 +1,21 @@
+Q. How would you safely delete a directory with all its contents?
+answer:
+
+In Node.js, a directory along with all its contents can be deleted safely using file system operations that handles recursive removal and error conditions.
+
+#example:
+    const fs = require("fs");
+    fs.rm("myFolder",{recursive: true, force: true}, (err) => {
+        if(err){
+           console.log(err);
+        }else{
+           console.log("directory deleted safely");
+        }
+    });
+
+#breakdown of code:
+fs.rm => remove the file or directory
+recursive: true => ensures that all files and subdirectories are removed.
+force: true => prevents errors if the directory does not exist.
+
+fs.rmSync => if wanted to use synchronous deletion.
