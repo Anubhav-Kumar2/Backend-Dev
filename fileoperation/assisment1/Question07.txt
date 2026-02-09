@@ -1,0 +1,3 @@
+Q. Why is it important to handle error in file operations?
+answer:
+Error handling in file operations is essential to manage unpredictable failures such as missing files, permission issues or resource limitations, thereby preventing crashes, ensuring data integrity and improving the robustness and reliability of the application.
