@@ -1,0 +1,11 @@
+Q. Explain the concept of piping in streams with an example.
+answer:
+In Node.js, piping is a stream mechanism that allow the output of one stream to be directly connected to the input of another stream, enabling efficient data transfer without loading the entire data into memory.
+
+#example:
+   const fs = require("fs");
+
+   const readStream = fs.createReadStream("source.txt");
+   const writeStream = fs.createWriteStream("destination.txt");
+
+   readStream.pipe(writeStream);
