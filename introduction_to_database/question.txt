@@ -1,0 +1,130 @@
+introduction to DataBases - SQL and MONGODB
+
+⁡⁣⁣⁢exercise 01:
+Choose the appropriate database type (SQL/NoSQL) and justify:
+1. Online banking system
+2. Social media platform
+3. Real-time chat application
+4. Hospital patient records
+5. IoT sensor data collection⁡
+
+
+​‌‍‌𝗮𝗻𝘀𝘄𝗲𝗿𝘀: ​
+⁡⁣⁢⁣​‌‍‌01.​ ​‌‍‌Online banking system:⁡​ 
+
+-> Requires strong ACID properties (Atomicity, Consistency, Isolation, Durability)
+   Transactions must be 100% reliable (e.g., money transfer)
+   Structured data (accounts, balances, transactions) 
+
+⁡⁣⁢⁣​‌‍‌02. Social Media Platform:​⁡
+
+-> Handles massive, unstructured, and evolving data
+   Needs horizontal scalability
+   Relationships (followers, likes) → Graph DB useful
+   Posts/comments → Document DB (flexible schema)
+
+⁡⁣⁢⁣​‌‍‌03. Real-time chat application:​⁡
+
+-> Requires low latency + high throughput
+   Messages are semi-structured and high volume
+   Often uses eventual consistency
+   Real-time systems favor speed over strict consistency
+
+⁡⁣⁢⁣​‌‍‌04. Hospital Patient Records:​⁡
+
+-> Needs high data integrity and accuracy
+   Structured schema (patients, diagnoses, treatments)
+   Must comply with regulations (data correctness critical)
+
+⁡⁣⁢⁣​‌‍‌05. IoT sensor data collection:​⁡
+
+->  Huge write-heavy workload
+    Data is continuous and time-based
+    Schema may vary across devices
+    Needs horizontal scaling
+
+⁡⁣⁣⁢exercise 02:
+For each scenario, identify which CAP properties are prioritized:
+1. Stock trading platform
+2. Content delivery network
+3. Airline booking system
+4. Video streaming service⁡
+
+​‌‍‌𝗮𝗻𝘀𝘄𝗲𝗿:​⁡
+⁡⁣⁢⁣​‌‍‌01. Stock trading platform:​⁡
+
+-> Consistency (C) is critical → prices, orders, balances must be exact.
+   Partition Tolerance (P) is unavoidable in distributed systems.
+
+⁡⁣⁢⁣​‌‍‌02. Content delivery network:​⁡
+
+-> Availability (A) → content must always be served (low latency globally).
+   Partition Tolerance (P) → operates across distributed edge servers.
+
+⁡⁣⁢⁣​‌‍‌03. Airline booking system:​⁡
+
+-> Consistency (C) → no double booking of seats
+   Partition Tolerance (P) → distributed booking systems
+
+⁡⁣⁢⁣​‌‍‌04. Video streaming service:​⁡
+
+-> Availability (A) → uninterrupted playback
+   Partition Tolerance (P) → global distributed infrastructure
+
+
+⁡⁣⁣⁢exercise 03:
+Create a database for a library system with operations for:
+1. Adding new books
+2. Finding books by author
+3. Updating book availability
+4. Tracking borrowed books by user⁡
+
+​‌‍‌𝗮𝗻𝘀𝘄𝗲𝗿:​
+⁡⁣⁢⁣​‌‍‌01.Adding new books:​⁡
+
+
+->  db.libManagement.insertMany([
+  {"bookName": "The Alchemist", "author": "Paulo Coelho","borrowedBy": "Rahul Sharma","isAvailable": false},
+  {"bookName": "Atomic Habits", "author": "James Clear","borrowedBy": "Priya Singh","isAvailable": true},
+  {"bookName": "1984","author": "George Orwell","borrowedBy": "Sneha Verma","isAvailable": false},
+  {"bookName": "Clean Code","author": "Robert C. Martin","borrowedBy": "Aman Gupta","isAvailable": true},
+  {"bookName": "The Pragmatic Programmer","author": "Andrew Hunt & David Thomas","borrowedBy": "Amit Kumar","isAvailable": false}
+])
+
+⁡⁣⁢⁣​‌‍‌02. Finding books by author:​⁡
+
+->  db.libManagement.find({author:{$regex:/^Robert/i}})
+
+⁡⁣⁢⁣​‌‍‌03. Updating book availability:​⁡
+
+->  db.libManagement.updateOne(
+  { bookName: "Atomic Habits" },
+  {
+    $set: {
+      isAvailable: false,
+      borrowedBy: "Rohit Verma"
+    }
+  }
+)
+
+⁡⁣⁢⁣​‌‍‌04. Tracking borrowed books by user:​⁡
+
+-> db.libManagement.find({ isAvailable: false })
+
+
+⁡⁣⁣⁢exercise 04:
+Convert the following JSON to proper BSON types:
+{
+   "orderId": "12345",
+   "orderDate": "2024-01-15",
+   "totalAmount": "99.99",
+   "items": ["item1", "item2"]
+}⁡
+
+​‌‍‌𝗮𝗻𝘀𝘄𝗲𝗿𝘀:​
+{
+  orderId: NumberInt(12345),
+  orderDate: ISODate("2024-01-15T00:00:00Z"),
+  totalAmount: NumberDecimal("99.99"),
+  items: ["item1", "item2"]
+}
