@@ -1,0 +1,40 @@
+# Sample cURL Commands to Test Your REST API
+
+# 1. READ: Get all books
+curl -X GET http://localhost:3000/api/books
+
+# 2. READ: Get all books with Pagination and Filtering
+curl -X GET "http://localhost:3000/api/books?limit=1&page=1"
+curl -X GET "http://localhost:3000/api/books?author=George"
+
+# 3. READ: Search for books by title
+curl -X GET "http://localhost:3000/api/books/search?title=1984"
+
+# 4. READ: Get a single book by ID
+curl -X GET http://localhost:3000/api/books/1
+
+# 5. CREATE: Add a new book (Status 201)
+curl -X POST http://localhost:3000/api/books \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Brave New World", "author":"Aldous Huxley", "year":1932}'
+
+# 6. CREATE: Attempt creating a book missing 'year' to test Validation Error (Status 400)
+curl -X POST http://localhost:3000/api/books \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Incomplete Book", "author":"Unknown Author"}'
+
+# 7. UPDATE: Replace a book's full details completely
+curl -X PUT http://localhost:3000/api/books/1 \
+  -H "Content-Type: application/json" \
+  -d '{"title":"The Great Gatsby - Updated", "author":"F. Scott Fitzgerald", "year":1926}'
+
+# 8. PATCH: Update only specific fields (e.g., year)
+curl -X PATCH http://localhost:3000/api/books/2 \
+  -H "Content-Type: application/json" \
+  -d '{"year":2024}'
+
+# 9. DELETE: Remove a book
+curl -X DELETE http://localhost:3000/api/books/3
+
+# 10. ERROR TEST: Call an unknown route to test 404 handler
+curl -X GET http://localhost:3000/api/invalid-route
